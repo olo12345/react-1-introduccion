@@ -1,4 +1,9 @@
 function CardPizza({ name, price, ingredients, img }) {
+    function IngredientsList() {
+        return ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+        ));
+    }
     return (
         <>
             <div className="card flex flex-col bg-white shadow-md rounded-lg m-2 mb-4">
@@ -6,7 +11,9 @@ function CardPizza({ name, price, ingredients, img }) {
                 <h3 className="text-xl font-semibold mb-2 ml-4">{name}</h3>
                 <hr className="text-gray-400" />
                 <p className="text-center text-gray-400">Ingredientes:</p>
-                <p className="text-gray-600 grow-1 mb-2 text-center">{ingredients.join(", ")}</p>
+                <ul className="text-gray-600 grow-1 mb-2 text-center">
+                    <IngredientsList />
+                </ul>
                 <hr className="text-gray-400 text-center" />
                 <p className="text-lg font-bold text-center">Precio: ${price.toLocaleString("es-CL")}</p>
                 <div className="flex flex-row items-center">

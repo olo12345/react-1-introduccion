@@ -1,12 +1,25 @@
 import Header from "./Header";
 import CardPizza from "./CardPizza";
+import {pizzas} from "../../assets/pizzas.js";
 
 export default function Home() {
+    const RenderPizzas = () => {
+        return pizzas.map(pizza => (
+            <CardPizza
+            name={pizza.name}
+            img={pizza.img}
+            price={pizza.price}
+            ingredients={pizza.ingredients}
+            key={pizza.id} />
+        ))
+    }
     return (
         <div className="mx-auto w-full">
             <Header />
             <div className="gallery">
-                <CardPizza
+            <RenderPizzas />
+
+                {/* <CardPizza
                     name="Napolitana"
                     price={5950}
                     ingredients={["mozzarella", "tomates", "jamón", "orégano"]}
@@ -29,7 +42,7 @@ a1c6-8c57bc388fab"
                     img="https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.co
 m/o/pizzeria%2Fpizza-1239077_640_com.jpg?alt=media&token=e7cde87a-08d5-4040-
 ac54-90f6c31eb3e3"
-                />
+                /> */}
             </div>
 
         </div>
