@@ -1,4 +1,4 @@
-import { pizzaCart } from "../../assets/pizzas.js";
+import { pizzaCart } from "./../../assets/pizzas.js";
 import { useState, useEffect } from "react";
 
 function Cart() {
